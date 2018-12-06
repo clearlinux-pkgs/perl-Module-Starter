@@ -102,12 +102,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Starter.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Starter/App.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Starter/BuilderSet.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Starter/Plugin.pod
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Starter/Plugin/Template.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Module/Starter/Simple.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Starter.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Starter/App.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Starter/BuilderSet.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Starter/Plugin.pod
+/usr/lib/perl5/vendor_perl/5.28.1Module/Starter/Plugin/Template.pm
+/usr/lib/perl5/vendor_perl/5.28.1Module/Starter/Simple.pm
 
 %files bin
 %defattr(-,root,root,-)
