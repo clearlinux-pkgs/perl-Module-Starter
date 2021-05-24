@@ -4,14 +4,15 @@
 #
 Name     : perl-Module-Starter
 Version  : 1.77
-Release  : 19
+Release  : 20
 URL      : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Module-Starter-1.77.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Module-Starter-1.77.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libm/libmodule-starter-perl/libmodule-starter-perl_1.750+dfsg-1.debian.tar.xz
 Summary  : 'a simple starter kit for any module'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Module-Starter-bin = %{version}-%{release}
+Requires: perl-Module-Starter-license = %{version}-%{release}
 Requires: perl-Module-Starter-man = %{version}-%{release}
 Requires: perl-Module-Starter-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
@@ -27,6 +28,7 @@ including basic builder scripts, tests, documentation, and module code.
 %package bin
 Summary: bin components for the perl-Module-Starter package.
 Group: Binaries
+Requires: perl-Module-Starter-license = %{version}-%{release}
 
 %description bin
 bin components for the perl-Module-Starter package.
@@ -41,6 +43,14 @@ Requires: perl-Module-Starter = %{version}-%{release}
 
 %description dev
 dev components for the perl-Module-Starter package.
+
+
+%package license
+Summary: license components for the perl-Module-Starter package.
+Group: Default
+
+%description license
+license components for the perl-Module-Starter package.
 
 
 %package man
@@ -90,6 +100,8 @@ make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Module-Starter
+cp %{_builddir}/Module-Starter-1.77/LICENSE %{buildroot}/usr/share/package-licenses/perl-Module-Starter/599327f5dabe5df62f9d13fdabb4110ef4a6910f
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -116,15 +128,19 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Module::Starter::Plugin::Template.3
 /usr/share/man/man3/Module::Starter::Simple.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Module-Starter/599327f5dabe5df62f9d13fdabb4110ef4a6910f
+
 %files man
 %defattr(0644,root,root,0755)
 /usr/share/man/man1/module-starter.1
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Starter.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Starter/App.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Starter/BuilderSet.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Starter/Plugin.pod
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Starter/Plugin/Template.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Starter/Simple.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/App.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/BuilderSet.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/Plugin.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/Plugin/Template.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/Simple.pm
