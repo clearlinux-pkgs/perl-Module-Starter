@@ -4,7 +4,7 @@
 #
 Name     : perl-Module-Starter
 Version  : 1.77
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Module-Starter-1.77.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Module-Starter-1.77.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libm/libmodule-starter-perl/libmodule-starter-perl_1.750+dfsg-1.debian.tar.xz
@@ -138,9 +138,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/App.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/BuilderSet.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/Plugin.pod
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/Plugin/Template.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Module/Starter/Simple.pm
+/usr/lib/perl5/*
