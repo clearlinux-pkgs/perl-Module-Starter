@@ -7,7 +7,7 @@
 #
 Name     : perl-Module-Starter
 Version  : 1.77
-Release  : 28
+Release  : 29
 URL      : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Module-Starter-1.77.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Module-Starter-1.77.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libm/libmodule-starter-perl/libmodule-starter-perl_1.750+dfsg-1.debian.tar.xz
